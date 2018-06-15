@@ -1,0 +1,27 @@
+#sidebar-wrapper
+  p.sidebar-title.text-center Models	
+  hr
+  ul.sidebar-nav            
+    a#create-btn
+      span.glyphicon.glyphicon-plus
+      | Create a new model
+    p.section-title Favourites
+
+    li
+      a(href='#') Models      
+        span.star.glyphicon.glyphicon-star-empty    
+    li
+      hr
+    p.section-title Recent
+    li
+      a(href='#') Overview
+        span.star.glyphicon.glyphicon-star-empty
+    li
+      a(href='#') Recent
+        span.star.glyphicon.glyphicon-star-empty          
+    p.section-title Models
+    each model in models    
+      li
+        a(href='#',mindex=model.index).model_link= model.name
+          span.star.glyphicon.glyphicon-star-empty
+

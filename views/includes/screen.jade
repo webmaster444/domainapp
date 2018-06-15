@@ -1,0 +1,84 @@
+.tools.form-inline.well
+	button#add_node_button.btn
+		i.icon-plus
+		|  Node
+	button#exportMarkupButton.btn Export Markup
+	button#exportSvgButton.btn Export SVG
+	button#exportCypherButton.btn Export Cypher	
+	button#saveModel.btn Save Model
+	button#updateModelButton.btn.hide Update Model
+	button#deleteModelButton.btn.hide Delete Model
+	button#duplicateModelButton.btn.hide Duplicate Model
+	label(for='internalScale') Internal Scale
+	input#internalScale(type='range', min='0.1', max='5', value='1', step='0.01')
+	input#mindex_hidden(type='hidden')
+	input#mn_hidden(type='hidden')
+
+.modal.hide.export-markup
+	.modal-header
+		h3 Edit/Export markup
+	.modal-body
+		textarea.code Some text
+	.modal-footer
+		a.btn.cancel(href='#') Cancel
+		a#save_markup.btn.btn-primary(href='#') Save
+
+.modal.hide.save-model
+	.modal-header
+		h3 Save Model
+	.modal-body
+		#required-field-alert.alert.alert-danger.hide(role='alert')
+			| Give your model a name to save it*
+		label(for='modelname') Model Name
+		input#modelname.form-control(type='text', placeholder='Input Model Name Here')
+	.modal-footer
+		a.btn.cancel(href='#') Cancel
+		a#save_model.btn.btn-primary(href='javascript:void(0)') Save		
+
+.modal.hide.pop-up-editor.node(tabindex='-1')
+	.modal-header
+		h3 Edit Node
+	.top-right-btn-bar
+		button#edit_node_delete.btn.btn-danger Delete
+	.modal-body
+		.form-horizontal
+			.control-group
+				label.control-label(for='node_caption') Caption
+				.controls
+					input#node_caption(type='text', value='A')
+			.control-group
+				label.control-label(for='node_properties') Properties
+				.controls
+					textarea#node_properties(rows='6')
+	.modal-footer
+		a.btn.cancel(href='#') Cancel
+		a#edit_node_save.btn.btn-primary(href='#') Save
+
+.modal.hide.pop-up-editor.relationship(tabindex='-1')
+	.modal-header
+		h3 Edit Relationship
+	.top-right-btn-bar
+		button#edit_relationship_reverse.btn Reverse
+		button#edit_relationship_delete.btn.btn-danger Delete
+	.modal-body
+		.form-horizontal
+			.control-group
+				label.control-label(for='relationship_type') Type
+				.controls
+					input#relationship_type(type='text', value='R')
+			.control-group
+				label.control-label(for='relationship_properties') Properties
+				.controls
+					textarea#relationship_properties(rows='6')
+	.modal-footer
+		a.btn.cancel(href='#') Cancel
+		a#edit_relationship_save.btn.btn-primary(href='#') Save
+.modal.hide.export-cypher
+	.modal-header
+		h3 Export as Cypher
+	.modal-body
+		textarea.code Some Text
+	.modal-footer
+		a.btn.cancel.btn-primary(href='#') Close
+		a#open_console.btn(href='#', target='_blank') Open in Console
+#canvas

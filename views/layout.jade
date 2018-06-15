@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(charset='utf-8')
+    title= title
+    link(rel='stylesheet', href='/css/main.css')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/style/graph-diagram.css')
+    link(rel='stylesheet', href='/css/style/graph-style-chunky.css', type='text/css')
+    link.graph-style(rel='stylesheet', href='/css/style/graph-style-chunky.css', type='text/css')
+    link(rel='stylesheet', href='/css/style/graph-editor.css', type='text/css')            
+    link(rel='stylesheet', href='/css/simple-sidebar.css', type='text/css')
+    link(rel='stylesheet', href='/css/style/bootstrap-notify.css', type='text/css')    
+    link(rel='stylesheet', href='/css/style/alert-blackgloss.css', type='text/css')    
+    link(rel='stylesheet', href='/css/style/alert-bangtidy.css', type='text/css')    
+  body
+    include includes/header
+    block content    
+
+    script(src='/js/lib/jquery.js')
+    script(src='/js/lib/bootstrap.js')    
+    script(src='/js/arrow-lib/d3.v3.js')
+    script(src='/js/arrow-lib/graph-diagram.js')
+    script(src='/js/arrow-lib/graph-editor.js')
+    script(src='/js/arrow-lib/cypher.js')
+    script(src='/js/lib/popper.min.js')    
+    script(src='/js/lib/bootstrap-notify.js')    
+    script(src='/js/main.js')
+    // Google Analytics: change UA-XXXXX-X to be your site's ID.
+    script.
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X','auto');ga('send','pageview');          
